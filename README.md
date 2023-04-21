@@ -1,5 +1,14 @@
 # pyTTRPG_LLM
  
+## Objectifs du projet
+
+- Classer des PDF dans des dossiers.
+- Extraire et retravailler leurs métadonnées en Python et csv.
+- Extraire le texte intégral en Python et autres.
+- Verser les métadonnées et le texte intégral dans une base de données SQlite.
+- Jouer avec la base de données SQlite.
+
+ 
 ## Structure du système de dossiers et fichiers
 
 - Yragatheque
@@ -36,39 +45,7 @@
 
 Les fichiers `00-nom` sont des scripts Python. 
 
-```graphviz
-digraph num {
-  nodesep=1.0 
-
-01 [label="01-permission"]
-02 [label="02-purge"]
-03 [label="03-rename"]
-10 [label="10-pdf2yaml"]
-11 [label="11-yaml2csv" ]
-12 [label="12-csv2yaml"]
-a11 [label="Modifier metadata.csv"; shape=none]
-30 [label="30-pdf2rawtext"]
-33 [label="33-if-rawtextFail"]
-b33 [label="Traitement manuel des PDF"; shape=none]
-34 [label="34-OCR-byTesseract"]
-40 [label="40-yamlntext2sqlite"]
-50 [label="50-reportSQlite"]
-51 [label="51-searchSQlite"]
-
-subgraph cluster00 { 01 -> 02 -> 03 }
-03 -> 10 
-subgraph cluster10 { 10 -> 11 -> a11 ->12 }
-12 -> 30
-subgraph cluster30 { 30 -> 33 -> b33 -> 30 -> 34  } 
-34 -> 40
-subgraph cluster5060 { 40 -> 50 -> 51}
-10 -> "[ .yaml ]"
-11 -> "[ metadata.csv ]"
-30 -> "[ .rawtext ]"
-34 -> "[ .ocrtext ]"
-40 -> "[ TTRPG_LLM.sqlite ]" 
-}
-```
+![](https://jdr.hypotheses.org/files/2023/04/flux-python.jpg)
 
 #### Explications : 
 - Préparation : 
