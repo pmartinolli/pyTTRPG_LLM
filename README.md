@@ -49,7 +49,7 @@ Les fichiers `00-nom` sont des scripts Python.
 
 #### Explications : 
 - Préparation : 
-    - **PARAMETERS** : contient le dossier dans lequel se trouve la collection de PDF.
+    - **PARAMETERS** : contient le chemin du dossier dans lequel se trouve la collection de PDF.
     - **01-permission** : parcours tous les dossiers et donne les droits en lecture-écriture partout
     - **02-purge** : supprime les fichiers `.yaml` , `.rawtext` et `.ocrtext` qui peuvent subsister de traitements précédents
     - **03-rename** : normalise les noms de fichiers (supprime les accents, les caractères spéciaux, remplace les espaces par des traits, etc.)
