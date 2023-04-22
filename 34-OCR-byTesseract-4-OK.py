@@ -2,7 +2,7 @@
 """
 Created on Sat Apr  8 22:32:22 2023
 
-@author: martinop
+@author: Pascaliensis, helped by ChatGPT 3.5 et ChatGPT 4
 """
 
 # pip install pdfrw

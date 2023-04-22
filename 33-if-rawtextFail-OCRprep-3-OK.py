@@ -2,7 +2,7 @@
 """
 Created on Fri Apr 21 10:50:59 2023
 
-@author: martinop
+@author: Pascaliensis, helped by ChatGPT 3.5 et ChatGPT 4
 """
 
 import os

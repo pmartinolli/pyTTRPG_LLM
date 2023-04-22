@@ -2,7 +2,7 @@
 """
 Created on Fri Mar 31 11:44:19 2023
 
-@author: martinop
+@author: Pascaliensis, helped by ChatGPT 3.5 et ChatGPT 4
 """
 
 

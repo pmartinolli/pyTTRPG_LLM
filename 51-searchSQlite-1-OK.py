@@ -2,7 +2,7 @@
 """
 Created on Thu Mar 30 17:06:42 2023
 
-@author: martinop
+@author: Pascaliensis, helped by ChatGPT 3.5 et ChatGPT 4
 """
 
 import sqlite3
