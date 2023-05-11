@@ -28,11 +28,17 @@ for subdir, dirs, files in os.walk(folder_path):
         if file.endswith('.pdf'):
             # Get the full path of the PDF file
             pdf_path = os.path.join(subdir, file)
+            pdf_path = unicodedata.normalize('NFKD', pdf_path).encode('ASCII', 'ignore').decode('ASCII')
 
             # Extract the file name without the extension
             file_name = os.path.splitext(file)[0]
             file_name = unicodedata.normalize('NFKD', file_name).encode('ASCII', 'ignore').decode('ASCII')
 
+            # Check if the YAML file already exists
+            yaml_path = os.path.join(subdir, file_name + '.yaml')
+            if os.path.exists(yaml_path):
+                print(f"YAML file already exists: {yaml_path}")
+                continue                    
 
             # Get the file size in megabytes (MB) rounded up
             file_size = os.path.getsize(pdf_path) / (1024 * 1024)
@@ -45,12 +51,6 @@ for subdir, dirs, files in os.walk(folder_path):
             except:
                 print(f"Corrupted PDF file (pagecount): {pdf_path}")
                 continue
-
-            # Check if the YAML file already exists
-            yaml_path = os.path.join(subdir, file_name + '.yaml')
-            if os.path.exists(yaml_path):
-                print(f"YAML file already exists: {yaml_path}")
-                continue                    
 
             # Get the name of the directories in the path to the current file and extract game and line
             sub_dir_parts = os.path.abspath(subdir).split(os.path.sep)

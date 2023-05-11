@@ -7,7 +7,7 @@ Created on Mon Mar 27 21:26:51 2023
 
 import os
 import unicodedata
-import re
+#import re
 from PARAMETERS import folder_path
 
 

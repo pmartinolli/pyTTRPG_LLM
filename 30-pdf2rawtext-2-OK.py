@@ -36,13 +36,7 @@ for subdir, dirs, files in os.walk(folder_path):
                         text += page.get_text()
             except:
                 print(f"Error extracting text from {pdf_path}")
-                continue
+                text = ""
 
-            # Save the text to a .rawtext file of the same name
-            try:
-                with open(text_path, 'w', encoding='utf-8') as f:
-                    f.write(text)
-                    print(f"Success for {text_path}")
-            except:
-                print(f"Error writing text to {text_path}")
-                continue
+            with open(text_path, 'w', encoding='utf-8') as f:
+                f.write(text)

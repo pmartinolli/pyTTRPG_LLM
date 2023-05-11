@@ -8,10 +8,13 @@ Created on Fri Apr 14 14:47:56 2023
 import os
 import csv
 import yaml
+
 from PARAMETERS import folder_path
+from PARAMETERS import working_directory
+
 
 # Open the CSV file and loop through each line
-with open(os.path.join(folder_path, 'metadata.csv'), 'r') as csvfile:
+with open(os.path.join(folder_path + working_directory, 'metadata.csv'), 'r') as csvfile:
     reader = csv.reader(csvfile)
     header = next(reader) # Get the header row
     for row in reader:

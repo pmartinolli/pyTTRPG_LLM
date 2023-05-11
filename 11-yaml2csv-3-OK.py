@@ -8,11 +8,16 @@ Created on Wed Mar 29 22:05:06 2023
 import os
 import csv
 import yaml
+
 from PARAMETERS import folder_path
+from PARAMETERS import working_directory
 
 
 # Define the header row for the CSV file
-csv_header = ['path', 'name', 'size', 'pages', 'game', 'line']
+csv_header = ['path', 'name', 'size', 'pages', 'game', 'line','edition', 'lang']
+# add the other columns that could be missing
+
+
 
 # Create an empty list to store the data from the YAML files
 yaml_data = []
@@ -42,7 +47,7 @@ for subdir, dirs, files in os.walk(folder_path):
             print(text_path)
 
 # Create a new CSV file and write the header row
-csv_path = os.path.join(folder_path, 'metadata.csv')
+csv_path = os.path.join(folder_path + working_directory, 'metadata.csv')
 with open(csv_path, 'w', newline='') as file:
     writer = csv.DictWriter(file, fieldnames=csv_header)
     writer.writeheader()

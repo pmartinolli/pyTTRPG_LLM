@@ -7,11 +7,14 @@ Created on Thu Mar 30 17:06:42 2023
 
 import sqlite3
 
+from PARAMETERS import folder_path
+from PARAMETERS import working_directory
+
 # Define the search string
 search_string = "D&D"
 
 # Connect to the database and execute the query
-with sqlite3.connect('TTRPG_LLM.sqlite') as conn:
+with sqlite3.connect(folder_path + working_directory + 'TTRPG_LLM.sqlite') as conn:
     c = conn.cursor()
 
     # Execute the query and fetch the results
@@ -31,6 +34,9 @@ with sqlite3.connect('TTRPG_LLM.sqlite') as conn:
             print(f"Position: {index}")
             print(f"Quotation: ...{quotation}...\n")
 
+
+    # Print the number of results
+    print(f"Number of results: {len(results)}\n")
 
 
 # The connection to the database is automatically closed when exiting the 'with' statement

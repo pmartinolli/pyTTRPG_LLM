@@ -8,8 +8,12 @@ Created on Fri Mar 31 11:44:19 2023
 
 import sqlite3
 
+from PARAMETERS import folder_path
+from PARAMETERS import working_directory
+
+
 # Connect to the database and get the cursor
-conn = sqlite3.connect('TTRPG_LLM.sqlite')
+conn = sqlite3.connect(folder_path + working_directory + 'TTRPG_LLM.sqlite')
 c = conn.cursor()
 
 # Get the total number of rows in the database
