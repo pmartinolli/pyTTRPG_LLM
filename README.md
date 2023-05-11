@@ -82,3 +82,6 @@ Les fichiers `00-nom` sont des scripts Python.
         - On créé un rapport de la base de données.
     - **51-searchSQlite**
         - On cherche une chaîne de caractère dans la base de données. 
+
+
+https://github.com/pmartinolli/pyTTRPG_LLM
